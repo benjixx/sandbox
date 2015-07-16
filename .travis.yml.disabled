@@ -1,3 +1,6 @@
+# does not play with vagrant OOTB due to run wrapper command,
+# also we may run into issues with docker in user mode linux
+
 env:
   global:
     - BRANCH=stable
