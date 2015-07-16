@@ -5,7 +5,7 @@ machine:
   services:
     - docker
 
-  pre:
+  post:
     ## not needed anymore as CircleCI now support dokcer 1.6 OOTB,
     ## see https://github.com/circleci/docker/issues/1#issuecomment-119925928
     # install more recent docker version
@@ -17,6 +17,10 @@ machine:
     - sudo wget --quiet https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb
     - sudo dpkg -i vagrant_1.7.2_x86_64.deb
 
+dependencies:
+  override:
+    - pip install tox
+
 test:
-  post:
+  override:
     - tox
