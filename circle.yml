@@ -25,4 +25,4 @@ test:
   override:
     - tox
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
-    - cp artifacts/tests/junit-*.xml $CIRCLE_TEST_REPORTS/junit/
+    - cp artifacts/test/junit-*.xml $CIRCLE_TEST_REPORTS/junit/
