@@ -1,0 +1,15 @@
+[run]
+branch = True
+data_file = artifacts/coverage/.coverage
+parallel = True
+source = sandbox
+
+[html]
+directory = artifacts/coverage/html
+
+[report]
+precision = 2
+show_missing = True
+
+[xml]
+output = artifacts/coverage/coverage.xml
