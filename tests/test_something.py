@@ -2,7 +2,7 @@ import sandbox
 
 
 def test_something():
-    pass
+    print sandbox.__version__
 
 
 def test_something2():
