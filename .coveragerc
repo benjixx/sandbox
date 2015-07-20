@@ -1,6 +1,10 @@
 [run]
 branch = True
+data_file = artifacts/coverage/.coverage
 source = sandbox
+
+[html]
+directory = artifacts/coverage/html
 
 [report]
 exclude_lines =
@@ -14,3 +18,6 @@ exclude_lines =
 ignore_errors = True
 precision = 2
 show_missing = True
+
+[xml]
+output = artifacts/coverage/coverage.xml
