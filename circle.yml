@@ -9,7 +9,7 @@ machine:
 
 dependencies:
   override:
-    - pip install tox
+    - pip install codecov tox
 
 test:
   override:
@@ -17,4 +17,5 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - cp artifacts/test/junit-*.xml $CIRCLE_TEST_REPORTS/junit/
 
-    - tox -e codecov
+    - tox -e codecov-prepare
+    - codecov
