@@ -5,11 +5,12 @@ env:
   - TOXENV=py27-ansible19
   - TOXENV=py27-ansible20
 
-before_install:
+install:
   - pip install codecov tox
 
 script:
   - tox
 
 after_success:
-  - codecov --file artifacts/coverage/.coverage.$TOXENV
+  - mv artifacts/coverage/.coverage.$TOXENV .coverage
+  - codecov
