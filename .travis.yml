@@ -1,10 +1,10 @@
+language: python
+python: 2.7
+
 sudo: required
 
 services:
   - docker
-
-language: python
-python: 2.7
 
 env:
   - TOX_ENV=py27-ansible19
@@ -16,3 +16,6 @@ install:
 script:
   - docker run busybox ls -rtl
   - tox -e $TOX_ENV
+
+after_success:
+  - coveralls
