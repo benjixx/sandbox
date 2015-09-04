@@ -11,7 +11,7 @@ env:
   - TOX_ENV=py27-ansible20
 
 install:
-  - pip install tox python-coveralls
+  - pip install tox
 
 script:
   - docker run busybox ls -rtl
