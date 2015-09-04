@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - docker run busybox ls -la
+  - docker run busybox ls -rtl
