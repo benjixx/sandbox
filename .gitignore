@@ -2,4 +2,6 @@
 
 *.egg-info/
 .tox/
-artifacts/
+
+.coverage
+coverage.xml

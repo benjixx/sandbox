@@ -12,5 +12,4 @@ script:
   - tox
 
 after_success:
-  - mv artifacts/coverage/.coverage.$TOXENV .coverage
   - codecov
