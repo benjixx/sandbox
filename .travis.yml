@@ -13,9 +13,11 @@ script:
   # - sudo ln -s /etc/apparmor.d/docker /etc/apparmor.d/disable/
   # - sudo apparmor_parser -R /etc/apparmor.d/docker
 
-  # disable apparmor
   - sudo apparmor_status
-  - sudo invoke-rc.d apparmor kill
+  - sudo find /etc/apparmor.d
+
+  # disable apparmor
+  - sudo invoke-rc.d apparmor stop
   - sudo update-rc.d -f apparmor remove
 
   - export CONTAINER_ID="$(docker run -d redis)"
