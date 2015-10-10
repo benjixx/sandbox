@@ -7,5 +7,9 @@ services:
   - docker
 
 script:
+  # disable apparmor docker profile
+  - sudo ln -s /etc/apparmor.d/docker /etc/apparmor.d/disable/
+  - sudo apparmor_parser -R /etc/apparmor.d/docker
+
   - export CONTAINER_ID="$(docker run -d redis)"
   - docker rm -f "${CONTAINER_ID}"
