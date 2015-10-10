@@ -13,12 +13,12 @@ script:
   # - sudo ln -s /etc/apparmor.d/docker /etc/apparmor.d/disable/
   # - sudo apparmor_parser -R /etc/apparmor.d/docker
 
-  - sudo apparmor_status
-  - sudo find /etc/apparmor.d
+  # - sudo apparmor_status
+  # - sudo find /etc/apparmor.d
 
-  # disable apparmor
-  - sudo invoke-rc.d apparmor teardown
-  - sudo update-rc.d -f apparmor remove
+  # # disable apparmor
+  # - sudo invoke-rc.d apparmor teardown
+  # - sudo update-rc.d -f apparmor remove
 
-  - export CONTAINER_ID="$(docker run -d redis)"
+  - export CONTAINER_ID="$(docker run -d --security-opt apparmor:unconfined redis)"
   - docker rm -f "${CONTAINER_ID}"
