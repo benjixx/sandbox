@@ -20,5 +20,8 @@ script:
   # - sudo invoke-rc.d apparmor teardown
   # - sudo update-rc.d -f apparmor remove
 
-  - export CONTAINER_ID="$(docker run -d --security-opt apparmor:unconfined redis)"
+  # put apparmor docker profile in complain mode
+  - sudo aa-complain /etc/apparmor.d/docker
+
+  - export CONTAINER_ID="$(docker run -d redis)"
   - docker rm -f "${CONTAINER_ID}"
