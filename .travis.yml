@@ -21,10 +21,10 @@ script:
   # - sudo update-rc.d -f apparmor remove
 
   # put apparmor docker profile in complain mode
-  - sudo apt-get -y update
-  - sudo apt-get -y install apparmor-utils
-  - sudo ls -la /etc/apparmor.d
-  - sudo aa-complain /etc/apparmor.d/docker
+  # - sudo apt-get -y update
+  # - sudo apt-get -y install apparmor-utils
+  # - sudo ls -la /etc/apparmor.d
+  # - sudo aa-complain /etc/apparmor.d/docker
 
   - export CONTAINER_ID="$(docker run -d redis)"
   - docker rm -f "${CONTAINER_ID}"
